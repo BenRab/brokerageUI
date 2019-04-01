@@ -1,8 +1,7 @@
 import React from 'react';
 import Headroom from 'react-headroom';
 import Table from 'react-bootstrap/Table'
-import { TiArrowDown, TiArrowUp } from "react-icons/ti";
-
+import SecurityPositionFunction from '../functional/SecurityPositionFunction';
 
 const SecurityPositions =  ({data = []}) => (
 <div>
@@ -20,18 +19,9 @@ const SecurityPositions =  ({data = []}) => (
       </tr>
     </thead>
     <tbody>
-        {data !== null ? data.map((securityPositions, index) => 
-            <tr key={securityPositions.toString()}>
-                <td key={index}>{index + 1}</td>
-                <td key={securityPositions.security.fullQualifiedName.toString()}>
-                    {securityPositions.security.fullQualifiedName} ({securityPositions.security.securityNumber}) <TiArrowDown />
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        ) 
-        : null}
+        {data.map((securityPositions, index) => 
+            <SecurityPositionFunction securityPositions={securityPositions} index={index}/>
+        )}
     </tbody>
   </Table>
 

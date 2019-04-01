@@ -6,7 +6,7 @@ class SecurityPositionsLoader extends Component {
         super(props);
     
         this.state = {
-          securityPositions: null,
+          securityPositions: [],
         };
     }
 

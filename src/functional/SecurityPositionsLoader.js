@@ -11,11 +11,10 @@ class SecurityPositionsLoader extends Component {
     }
 
     componentDidMount() {
-        return fetch('http://localhost:8080/rest/list')
+        return fetch('http://localhost:8080/marketdata/quotes')
             .then(response => response.json())
             .then(response => {
-                this.setState({securityPositions : response[0]});
-                window.dataVar = response[0];
+                this.setState({securityPositions : response});
                 });
     }
 

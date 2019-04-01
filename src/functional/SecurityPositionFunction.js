@@ -11,7 +11,7 @@ class SecurityPositionFunction extends Component {
     }
 
     componentDidMount() {
-        if (this.props.securityPositions !== undefined) {
+        /*if (this.props.securityPositions !== undefined) {
             const response = fetch('http://localhost:8080/marketdata/quote/' + this.props.securityPositions.security.securityNumber);
             response
                 .then(response => response.json())
@@ -19,12 +19,12 @@ class SecurityPositionFunction extends Component {
                     this.setState({marketData : response});
                     console.log(response);
                 });
-        }
+        }*/
     }
 
     render() {
         return (
-          <SecurityPosition securityPositions={this.props.securityPositions} marketData={this.state.marketData} index={this.props.index}/>
+          <SecurityPosition securityPositions={this.props.securityPositions.first} marketData={this.props.securityPositions.second} index={this.props.index}/>
         );
       }
 }

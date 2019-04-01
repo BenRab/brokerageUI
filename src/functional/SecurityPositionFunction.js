@@ -12,11 +12,11 @@ class SecurityPositionFunction extends Component {
 
     componentDidMount() {
         if (this.props.securityPositions !== undefined) {
-            const response = fetch('http://localhost:8080/marketdata/quoteAccurate/' + this.props.securityPositions.security.securityNumber);
+            const response = fetch('http://localhost:8080/marketdata/quote/' + this.props.securityPositions.security.securityNumber);
             response
                 .then(response => response.json())
                 .then(response => {
-                    this.setState({marketData : response["Global Quote"]});
+                    this.setState({marketData : response});
                     console.log(response);
                 });
         }

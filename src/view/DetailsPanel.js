@@ -1,7 +1,6 @@
 
 
 import React, {Component} from 'react';
-import { TiArrowDown, TiArrowUp } from "react-icons/ti";
 
 class DetailsPanel extends Component {
     constructor(props) {
@@ -13,13 +12,22 @@ class DetailsPanel extends Component {
     }
 
     render() {
-        return (
-            <tr key={this.props.securityPositions.toString()}>
-                <td colspan="2"></td>
-                <td colSpan="3">{this.props.marketData.currentValue}</td>
-                <td></td>
-            </tr>     
-        );
+        if (this.props.showDetails) {
+            return (
+                <tr key={this.props.securityPositions.toString()}>
+                    <td></td>
+                    <td>
+                        Low: {this.props.marketData.low} <br/>
+                        Current: {this.props.marketData.currentValue} <br/>
+                        High: {this.props.marketData.high}
+                    </td>
+                    <td colSpan="3"></td>
+                    <td></td>
+                </tr>     
+            );
+        } else {
+            return null;
+        }
     }
 }
 

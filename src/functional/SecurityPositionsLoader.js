@@ -25,7 +25,7 @@ class SecurityPositionsLoader extends Component {
         this.setState({marketData : data});
       })
 
-      fetch('http://localhost:8080/account/list/' + this.props.securityPositions.security.securityNumber)
+      fetch('http://localhost:8080/account/list/')
         .then(response => response.json())
         .then(response => {
           this.setState({securityPositions : response});

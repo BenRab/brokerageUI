@@ -12,14 +12,15 @@ class DetailsPanel extends Component {
     }
 
     render() {
+        const quote = this.props.marketData.currentQuote;
         if (this.props.showDetails) {
             return (
                 <tr key={this.props.securityPositions.toString()}>
                     <td></td>
                     <td>
-                        Low: {this.props.marketData.low} <br/>
-                        Current: {this.props.marketData.currentValue} <br/>
-                        High: {this.props.marketData.high}
+                        Low: {quote.low} <br/>
+                        Current: {quote.currentValue} <br/>
+                        High: {quote.high}
                     </td>
                     <td colSpan="3"></td>
                     <td></td>

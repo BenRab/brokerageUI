@@ -12,6 +12,7 @@ class GeneralPanel extends Component {
     }
 
     render() {
+        const quote = this.props.marketData.currentQuote;
         return (
             <tr key={this.props.securityPositions.toString()}>
                 <td key={this.props.index}>{this.props.index + 1}</td>
@@ -21,9 +22,9 @@ class GeneralPanel extends Component {
                     {this.props.securityPositions.security.fullQualifiedName} ({this.props.securityPositions.security.wkn}) 
                 </td>
                 <td>
-                <ChangingNumber value={this.props.marketData.currentValue} />
+                <ChangingNumber value={quote.currentValue} />
                 </td>
-                <td><ChangingNumber value={this.props.marketData.changeTotal} /><br/><ChangingNumber value={this.props.marketData.changePercent} />%</td>
+                <td><ChangingNumber value={quote.changeTotal} /><br/><ChangingNumber value={quote.changePercent} />%</td>
                 <td></td>
             </tr>        
         );

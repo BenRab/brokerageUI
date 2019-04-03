@@ -3,7 +3,7 @@ import Headroom from 'react-headroom';
 import Table from 'react-bootstrap/Table'
 import SecurityPositionFunction from '../functional/SecurityPositionFunction';
 
-const SecurityPositions =  ({data = []}) => (
+const SecurityPositions =  ({data = [], marketData}) => (
 <div>
     <Headroom>
         <h1>SecurityPositions</h1>
@@ -19,9 +19,10 @@ const SecurityPositions =  ({data = []}) => (
       </tr>
     </thead>
     <tbody>
-        {data.map((securityPositions, index) => 
-            <SecurityPositionFunction securityPositions={securityPositions} index={index} marketData={this.props.marketData.get(index)}/>
-        )}
+        {data[0] !== undefined ? data[0].map((securityPositions, index) => {
+            return <SecurityPositionFunction securityPositions={securityPositions} index={index} marketData={marketData[index]}/>;
+        }
+        ) : null}
     </tbody>
   </Table>
 

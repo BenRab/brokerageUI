@@ -17,7 +17,7 @@ class SecurityPosition extends Component {
     
     render() {
         return (
-            this.props.securityPositions !== undefined ?
+            this.props.securityPositions !== undefined && this.props.marketData !== undefined?
             <React.Fragment>
                 <GeneralPanel {...this.props} showDetails={this.state.showDetails} changeDetails={this.changeDetailsView}/>
                 <DetailsPanel {...this.props} showDetails={this.state.showDetails}/>

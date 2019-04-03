@@ -17,6 +17,7 @@ class DetailsPanel extends Component {
                 <tr key={this.props.securityPositions.toString()}>
                     <td></td>
                     <td>
+                        Date: {quote.date} - {quote.time} <br/>
                         Low: {quote.low} <br/>
                         Current: {quote.currentValue} <br/>
                         High: {quote.high}

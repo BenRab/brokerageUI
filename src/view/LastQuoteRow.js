@@ -6,7 +6,7 @@ class LastQuoteRow extends Component {
             <tr>
                 <td>{this.props.index}</td>
                 <td>{this.props.quote.currentValue}</td>
-                <td></td>
+                <td>{this.props.quote.time}</td>
                 <td></td>
             </tr>     
         )

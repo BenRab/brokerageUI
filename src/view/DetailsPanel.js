@@ -1,6 +1,5 @@
-
-
 import React, {Component} from 'react';
+import LastQuotesTable from './LastQuotesTable';
 
 class DetailsPanel extends Component {
     constructor(props) {
@@ -22,8 +21,9 @@ class DetailsPanel extends Component {
                         Current: {quote.currentValue} <br/>
                         High: {quote.high}
                     </td>
-                    <td colSpan="3"></td>
-                    <td></td>
+                    <td colSpan="4">
+                        <LastQuotesTable lastQuotes={this.props.marketData.lastQuotes}/>
+                    </td>
                 </tr>     
             );
         } else {

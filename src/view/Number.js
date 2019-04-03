@@ -6,7 +6,11 @@ class ChangingNumber extends Component {
         return (
                 <AnimatedNumber 
                     value={this.props.value}
-
+                    style={{
+                        transition: '0.8s ease-out',
+                        transitionProperty:
+                            'background-color, color, opacity'
+                    }}
                     frameStyle={perc => (
                         perc === 100 ? {} : {backgroundColor: '#ffeb3b'}
                     )}

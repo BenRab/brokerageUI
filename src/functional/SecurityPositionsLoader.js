@@ -9,6 +9,7 @@ class SecurityPositionsLoader extends Component {
     
         this.state = {
           securityPositions: [],
+          marketData: [],
         };
     }
 
@@ -21,13 +22,19 @@ class SecurityPositionsLoader extends Component {
         ));
   
       request.subscribe((data) => { 
-        this.setState({securityPositions : data});
+        this.setState({marketData : data});
       })
+
+      fetch('http://localhost:8080/account/list/' + this.props.securityPositions.security.securityNumber)
+        .then(response => response.json())
+        .then(response => {
+          this.setState({securityPositions : response});
+        });
     }
 
     render() {
         return (
-          <SecurityPositions data={this.state.securityPositions}/>
+          <SecurityPositions data={this.state.securityPositions} marketData={this.state.marketData}/>
         );
       }
 }

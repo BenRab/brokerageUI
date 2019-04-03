@@ -24,7 +24,7 @@ class SecurityPositionFunction extends Component {
 
     render() {
         return (
-          <SecurityPosition securityPositions={this.props.securityPositions.first} marketData={this.props.securityPositions.second} index={this.props.index}/>
+          <SecurityPosition securityPositions={this.props.securityPositions} marketData={this.props.marketData} index={this.props.index}/>
         );
       }
 }

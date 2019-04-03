@@ -20,7 +20,7 @@ const SecurityPositions =  ({data = []}) => (
     </thead>
     <tbody>
         {data.map((securityPositions, index) => 
-            <SecurityPositionFunction securityPositions={securityPositions} index={index}/>
+            <SecurityPositionFunction securityPositions={securityPositions} index={index} marketData={this.props.marketData.get(index)}/>
         )}
     </tbody>
   </Table>

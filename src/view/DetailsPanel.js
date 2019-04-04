@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import LastQuotesTable from './LastQuotesTable';
+import DetailsChart from './DetailsChart'
 
 class DetailsPanel extends Component {
     constructor(props) {
@@ -27,6 +28,7 @@ class DetailsPanel extends Component {
                     </td>
                     <td colSpan="4">
                         <LastQuotesTable lastQuotes={this.props.marketData.lastQuotes}/>
+                        <DetailsChart wkn={this.props.securityPositions.security.wkn} market="GAT"/>
                     </td>
                 </tr>     
             );

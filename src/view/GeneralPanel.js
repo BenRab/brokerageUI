@@ -25,7 +25,7 @@ class GeneralPanel extends Component {
                 <ChangingNumber value={quote.currentValue} />
                 </td>
                 <td><ChangingNumber value={quote.changeTotal} /><br/><ChangingNumber value={quote.changePercent} />%</td>
-                <td></td>
+                <td>{quote.currentValue * this.props.securityPositions.positionSummary.amount}</td>
             </tr>        
         );
     }

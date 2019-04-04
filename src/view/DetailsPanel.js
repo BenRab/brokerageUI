@@ -17,6 +17,9 @@ class DetailsPanel extends Component {
                 <tr key={this.props.securityPositions.toString()}>
                     <td></td>
                     <td>
+                        <b>General Information</b> <br/>
+                        Amount: {this.props.securityPositions.positionSummary.amount}<br/><br/>
+                        <b>Marketdata</b> <br/>
                         Date: {quote.date} - {quote.time} <br/>
                         Low: {quote.low} <br/>
                         Current: {quote.currentValue} <br/>

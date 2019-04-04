@@ -27,8 +27,7 @@ class DetailsPanel extends Component {
                         High: {quote.high}
                     </td>
                     <td colSpan="4">
-                        <LastQuotesTable lastQuotes={this.props.marketData.lastQuotes}/>
-                        <DetailsChart wkn={this.props.securityPositions.security.wkn} market="GAT"/>
+                        <DetailsChart wkn={this.props.securityPositions.security.wkn} market={this.props.securityPositions.security.market}/><br/>
                     </td>
                 </tr>     
             );

@@ -15,7 +15,7 @@ class SecurityPositionsLoader extends Component {
     }
 
     async componentDidMount() {
-      const request = interval(90000).pipe( 
+      const request = interval(20000).pipe( 
         startWith(0), 
         switchMap(() => 
           fetch('http://localhost:8080/marketdata/quotes')

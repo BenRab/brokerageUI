@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import LastQuotesTable from './LastQuotesTable';
 import DetailsChart from './DetailsChart'
 
 class DetailsPanel extends Component {

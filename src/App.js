@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import {stack as Menu} from 'react-burger-menu'
 import {Container} from 'react-bootstrap'
 import SecurityPositionsLoader from './functional/SecurityPositionsLoader';
 

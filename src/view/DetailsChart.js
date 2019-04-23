@@ -45,12 +45,12 @@ class DetailsChart extends Component {
                     // Will display time in 10:30:23 format
                     formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
                 }
-                if (inputDate === '5D') {
+                else if (inputDate === '5D') {
                     var day = date.getDay();
                     const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];    
                     formattedTime = weekdays[day];
                 }
-                if (inputDate === '1M') {
+                else if (inputDate === '1M') {
                     var appendix = 'th';
                     const day = date.getDate();
                     if (day === 1) {
@@ -62,20 +62,20 @@ class DetailsChart extends Component {
                     }
                     formattedTime =  day + appendix;
                 }
-                if (inputDate === '1Y' || inputDate === '6M') {
-                    var appendix = 'th';
+                else if (inputDate === '1Y' || inputDate === '6M') {
+                    var appendixYear = 'th';
                     const day = date.getDate();
                     if (day === 1) {
-                        appendix = 'st';
+                        appendixYear = 'st';
                     } else if (day === 2) {
-                        appendix = 'nd';
+                        appendixYear = 'nd';
                     } else if (day === 3) {
-                        appendix = 'rd';
+                        appendixYear = 'rd';
                     }
                     const month = date.getMonth();
-                    formattedTime =  months[month] + ' ' + day + appendix;
+                    formattedTime =  months[month] + ' ' + day + appendixYear;
                 }
-                if (inputDate === '5Y') {
+                else if (inputDate === '5Y') {
                     const year = date.getFullYear();
                     const month = date.getMonth();
                     formattedTime =  months[month] + ' ' + year;

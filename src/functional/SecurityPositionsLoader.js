@@ -14,6 +14,12 @@ class SecurityPositionsLoader extends Component {
           marketData: [],
           coba: []
         };
+
+        this.addPosition = this.addPosition.bind(this);
+    }
+
+    addPosition() {
+      this.setState({securityPositions : this.state.securityPositions});
     }
 
     async componentDidMount() {
@@ -39,7 +45,7 @@ class SecurityPositionsLoader extends Component {
       if (this.state.loading) {
         return <ReactLoading type="balls" color={'#000'} height={'16%'} width={'16%'} />
       }
-      return <SecurityPositions data={this.state.securityPositions} marketData={this.state.marketData}/>
+      return <SecurityPositions data={this.state.securityPositions} marketData={this.state.marketData} addPositionCallback={this.addPosition}/>
     }
 }
 

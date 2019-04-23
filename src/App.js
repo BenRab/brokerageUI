@@ -16,23 +16,13 @@ function Users() {
 class App extends Component {
   render() {
     return (
-      <div id="outer-container">
         <Router>
-          <Menu pageWrapId={ "page-wrap" }>
-            <a id="home" className="menu-item" href="/">Home</a>
-            <a id="positions" className="menu-item" href="/positions">Security Position</a>
-            <a id="contact" className="menu-item" href="/contact">Contact</a>
-          </Menu>
-
-          <main id="page-wrap">
             <Container>
               <Route path="/" exact component={Index} />
               <Route path="/positions/" component={SecurityPositionsLoader} />
               <Route path="/users/" component={Users} />
             </Container>
-          </main>
         </Router>
-      </div>
     );
   }
 }

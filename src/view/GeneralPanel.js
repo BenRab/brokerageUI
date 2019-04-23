@@ -22,10 +22,10 @@ class GeneralPanel extends Component {
                     {this.props.securityPositions.security.fullQualifiedName} ({this.props.securityPositions.security.wkn}) 
                 </td>
                 <td>
-                <ChangingNumber value={quote.currentValue} />
+                <ChangingNumber value={(quote.currentValue)} />
                 </td>
-                <td><ChangingNumber value={quote.changeTotal} /><br/><ChangingNumber value={quote.changePercent} />%</td>
-                <td>{quote.currentValue * this.props.securityPositions.positionSummary.amount}</td>
+                <td><ChangingNumber value={(quote.changeTotal)} /><br/><ChangingNumber value={quote.changePercent} />%</td>
+                <td>{(quote.currentValue * this.props.securityPositions.positionSummary.amount).toFixed(2)}</td>
             </tr>        
         );
     }

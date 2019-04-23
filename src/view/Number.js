@@ -15,6 +15,7 @@ class ChangingNumber extends Component {
                         perc === 100 ? {} : {backgroundColor: '#ffeb3b'}
                     )}
                     duration={200}
+                    stepPrecision={2}
                 />    
         );
     }

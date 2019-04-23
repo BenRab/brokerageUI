@@ -18,6 +18,8 @@
     "react-loading": "^2.0.3",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "react-scroll-parallax": "^2.1.2",
+    "react-sticky": "^6.0.3",
     "recharts": "^1.5.0",
     "rxjs": "^6.3.3"
   },

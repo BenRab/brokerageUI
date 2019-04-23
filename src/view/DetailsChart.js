@@ -33,7 +33,6 @@ class DetailsChart extends Component {
                 var formattedTime = '';
                 const date = new Date(timeArray[i]*1000);
                 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-                const monthsFull = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
                 if (inputDate === '1D') {
                     // Hours part from the timestamp
@@ -100,7 +99,7 @@ class DetailsChart extends Component {
         return (
             <div>
 
-                <LineChart width={600} height={300} data={this.state.marketData}
+                <LineChart width={700} height={320} data={this.state.marketData}
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}>
                     <XAxis dataKey="time"/>
                     <YAxis domain={['auto', 'auto']} />
@@ -111,17 +110,17 @@ class DetailsChart extends Component {
                 <div align="center">
                     <ButtonGroup aria-label="Basic example">
                         <Button disabled={this.state.loadingChart} 
-                            onClick={() => this.handleChartDateChange("1D")} variant={this.state.date === '1D' ? 'primary' : 'secondary'}>Intraday</Button>
+                            onClick={() => this.handleChartDateChange("1D")} variant={this.state.date === '1D' ? 'primary' : 'light'}>Intraday</Button>
                         <Button disabled={this.state.loadingChart} 
-                            onClick={() => this.handleChartDateChange("5D")} variant={this.state.date === '5D' ? 'primary' : 'secondary'}>Week</Button>
+                            onClick={() => this.handleChartDateChange("5D")} variant={this.state.date === '5D' ? 'primary' : 'light'}>Week</Button>
                         <Button disabled={this.state.loadingChart} 
-                            onClick={() => this.handleChartDateChange("1M")} variant={this.state.date === '1M' ? 'primary' : 'secondary'}>Month</Button>
+                            onClick={() => this.handleChartDateChange("1M")} variant={this.state.date === '1M' ? 'primary' : 'light'}>Month</Button>
                         <Button disabled={this.state.loadingChart} 
-                            onClick={() => this.handleChartDateChange("6M")} variant={this.state.date === '6M' ? 'primary' : 'secondary'}>6 Months</Button>
+                            onClick={() => this.handleChartDateChange("6M")} variant={this.state.date === '6M' ? 'primary' : 'light'}>6 Months</Button>
                         <Button disabled={this.state.loadingChart} 
-                            onClick={() => this.handleChartDateChange("1Y")} variant={this.state.date === '1Y' ? 'primary' : 'secondary'}>Year</Button>
+                            onClick={() => this.handleChartDateChange("1Y")} variant={this.state.date === '1Y' ? 'primary' : 'light'}>Year</Button>
                         <Button disabled={this.state.loadingChart} 
-                            onClick={() => this.handleChartDateChange("5Y")} variant={this.state.date === '5Y' ? 'primary' : 'secondary'}>5 years</Button>
+                            onClick={() => this.handleChartDateChange("5Y")} variant={this.state.date === '5Y' ? 'primary' : 'light'}>5 years</Button>
                     </ButtonGroup>
                 </div>
             </div>

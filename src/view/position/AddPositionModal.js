@@ -10,7 +10,7 @@ const AddPositionModal =  ({show, toggleShow, addPositionsCallback}) => (
         <Modal.Title>Add Security Position</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <PositionForm/>
+            <PositionForm addPositionsCallback={addPositionsCallback}/>
         </Modal.Body>
         <Modal.Footer>
         <Button variant="secondary" onClick={toggleShow}>

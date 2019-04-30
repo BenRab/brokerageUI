@@ -3,6 +3,7 @@ import SecurityPositions from "../view/SecurityPositions";
 import { interval } from 'rxjs';
 import { startWith, switchMap } from 'rxjs/operators';
 import ReactLoading from 'react-loading';
+import AddPositionArea from '../functional/AddPositionArea'
 
 class SecurityPositionsLoader extends Component {
     constructor(props) {
@@ -42,10 +43,14 @@ class SecurityPositionsLoader extends Component {
     }
 
     render() {
-      if (this.state.loading) {
-        return <ReactLoading type="balls" color={'#000'} height={'16%'} width={'16%'} />
-      }
-      return <SecurityPositions data={this.state.securityPositions} marketData={this.state.marketData} addPositionCallback={this.addPosition}/>
+      return (
+        <React.Fragment>
+          <AddPositionArea addPositionsCallback={this.addPosition}/>
+          {this.state.loading === true ? 
+            <ReactLoading type="balls" color={'#000'} height={'16%'} width={'16%'} />
+            : <SecurityPositions data={this.state.securityPositions} marketData={this.state.marketData}/>
+          }
+        </React.Fragment>);
     }
 }
 

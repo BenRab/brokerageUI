@@ -30,9 +30,8 @@ class AddPositionArea extends Component {
         this.setState({show: !this.state.show});
     }
 
-    addPosition(test) {
-        alert(test)
-        this.props.addPositionsCallback();
+    addPosition(requestObject) {
+        this.props.addPositionsCallback(requestObject);
         this.setState({show: !this.state.show});
     }
 

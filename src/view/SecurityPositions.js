@@ -1,11 +1,9 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table'
 import SecurityPositionFunction from '../functional/SecurityPositionFunction';
-import AddPositionArea from '../functional/AddPositionArea'
 
 const SecurityPositions =  ({data = [], marketData, addPositionCallback}) => (
 <div> 
-      <AddPositionArea addPositionsCallback={addPositionCallback}/>
       <Table responsive="sm">
         <thead>
           <tr>
